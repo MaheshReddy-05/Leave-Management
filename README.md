@@ -4,7 +4,7 @@ This project is a Leave Management System designed to help employees manage thei
 
 ### Planned/Not Yet Implemented Features
 
-1. **Availability Check During Leave Application**
+1. **Availability Check During Leave Approve**
 2. **Email Notifications**
 
 ## Screenshots
