@@ -3,10 +3,9 @@
 This project is a Leave Management System designed to help employees manage their leaves, view leave summaries, and track team leaves.
 
 ### Planned/Not Yet Implemented Features
-1. **Leave Request Validation Against Weekends and Holidays**
-2. **Team Summary with Leaves Left**
-3. **Availability Check During Leave Application**
-4. **Email Notifications**
+
+1. **Availability Check During Leave Application**
+2. **Email Notifications**
 
 ## Screenshots
 
