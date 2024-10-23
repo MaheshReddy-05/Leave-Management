@@ -8,9 +8,9 @@ import java.sql.SQLException;
 
 
 public class DBConnector {
-    private final static String DB_URL = "jdbc:mysql://127.0.0.1:3306/leavemanagement";
+    private final static String DB_URL = "jdbc:mysql://127.0.0.1:3306/LeaveManagement";
     private final static String DB_USERNAME = "root";
-    private final static String DB_PASSWORD = "Reddy7168";
+    private final static String DB_PASSWORD = "";
 
     private static volatile Connection connection;
 

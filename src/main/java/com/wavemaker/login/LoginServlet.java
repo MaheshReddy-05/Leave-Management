@@ -49,13 +49,24 @@ public class LoginServlet extends HttpServlet {
                 session.setMaxInactiveInterval(30 * 60);
                 String cookieName = "AuthCookie";
                 Cookie cookie = new Cookie(cookieName, cookieValue);
+
+                cookie.setHttpOnly(true);
+                cookie.setSecure(false);
+                cookie.setPath("/");
+                cookie.setMaxAge(30 * 60);
+//                cookie.setSameSite("None");
+
                 session.setAttribute("AuthCookie", employeeId);
                 session.setAttribute("employeeId", employeeId);
                 resp.addCookie(cookie);
+
+                String sessionId = session.getId();
+                resp.setHeader("Set-Cookie", "JSESSIONID=" + sessionId + "; HttpOnly; SameSite=None; Secure");
+
                 CookieStore.addUserCookie(employeeId, cookieValue);
+
                 jsonResponse = gson.toJson("Valid");
                 sendResponse(resp, jsonResponse);
-
             } else {
                 jsonResponse = gson.toJson("Invalid login credentials");
                 sendResponse(resp, jsonResponse);

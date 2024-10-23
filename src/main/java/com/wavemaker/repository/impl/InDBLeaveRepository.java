@@ -22,8 +22,8 @@ public class InDBLeaveRepository implements LeaveRepository {
     private final static String queryGetLeavesAsManager =
             "SELECT e.EMPLOYEE_ID, e.EMPLOYEE_NAME, l.LEAVE_ID, l.REASON, l.LEAVE_TYPE, " +
                     "l.CREATED_AT, l.FROM_DATE, l.TO_DATE, l.LEAVE_COUNT, l.STATUS " +
-                    "FROM employee e " +
-                    "JOIN leaves l ON e.EMPLOYEE_ID = l.EMPLOYEE_ID " +
+                    "FROM EMPLOYEE e " +
+                    "JOIN LEAVES l ON e.EMPLOYEE_ID = l.EMPLOYEE_ID " +
                     "WHERE l.MANAGER_ID = ? " +
                     "AND (? = 'All' OR l.STATUS = ?);";
     private final static String queryGetManagerId = "SELECT MANAGER_ID FROM EMPLOYEE WHERE EMPLOYEE_ID =?";

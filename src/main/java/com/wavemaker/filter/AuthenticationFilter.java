@@ -10,8 +10,8 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.logging.Logger;
 
-@WebFilter(urlPatterns = {"/employees", "/gender", "/leaves_summary", "/leave_request", "/logout", "/holidays",
-        "/employee_had_team"})
+@WebFilter(urlPatterns = {"/employees", "/gender","/recent_leaves", "/leaves_summary", "/leave_request", "/logout", "/holidays",
+        "/employee_had_team","/team_leaves_summary"})
 public class AuthenticationFilter implements Filter {
 
     private static final Logger LOGGER = Logger.getLogger(AuthenticationFilter.class.getName());
@@ -23,18 +23,18 @@ public class AuthenticationFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) servletResponse;
         HttpSession session = request.getSession(false);
 
-        if (session == null) {
-            LOGGER.info("No session found, redirecting to login page.");
-            LOGGER.info("Hello"+request.getContextPath() + "/index.html");
-            response.sendRedirect(request.getContextPath() + "/index.html");
-            return;
-        }
+//        if (session == null) {
+//            LOGGER.info("No session found, redirecting to login page.");
+//            LOGGER.info("Hello"+request.getContextPath() + "/index.html");
+////            response.sendRedirect(request.getContextPath() + "/index.html");
+////            return;
+//        }
 
         Integer employeeId = (Integer) session.getAttribute("AuthCookie");
 
         if (employeeId == null || employeeId == -1 || CookieStore.getCookieValue(employeeId) == null) {
             LOGGER.info("Failed authentication, redirecting to login page.");
-            response.sendRedirect(request.getContextPath() + "/index.html");
+//            response.sendRedirect(request.getContextPath() + "/index.html");
             return;
         }
 

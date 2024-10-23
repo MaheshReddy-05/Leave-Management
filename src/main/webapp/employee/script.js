@@ -764,7 +764,7 @@ function fetchLeaveSummaryData() {
                     personalTimeOffTaken: member.personalTimeOff,
                     gender: member.gender,
                     maternityLeaveTaken: member.gender === 'Female' ? member.maternityLeave : null,
-                    paternityLeaveTaken: member.gender === 'Male' ? member.paternityLeave : null
+                    paternityLeaveTaken: member.gender === 'Male' ? member.paterpaternityLeavenityLeave : null
                 };
             });
             displayTeamSummary(processedTeamMembers);
